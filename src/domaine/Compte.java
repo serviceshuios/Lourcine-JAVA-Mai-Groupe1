@@ -3,9 +3,9 @@ package domaine;
 public class Compte {
 
 	private int idCompte;
-	private double solde;
+	protected double solde;
 	//le compte à un seul propriétaire
-	private Personne proprietaire;
+	protected Personne proprietaire;
 	
 	public Compte() {
 		super();
