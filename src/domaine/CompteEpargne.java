@@ -1,5 +1,12 @@
 package domaine;
 
+/**
+ * La classe CompteEpargne herite de la classe Compte en y ajoutant
+ * 
+ * @author Adminl
+ *
+ */
+
 public class CompteEpargne extends Compte {
 
 	private double pourcentage;

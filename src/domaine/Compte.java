@@ -4,6 +4,7 @@ public class Compte {
 
 	private int idCompte;
 	private double solde;
+	//le compte à un seul propriétaire
 	private Personne proprietaire;
 	
 	public Compte() {
