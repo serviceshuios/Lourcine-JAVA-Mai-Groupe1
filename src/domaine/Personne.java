@@ -1,5 +1,7 @@
 package domaine;
 
+import java.util.Collection;
+
 public class Personne {
 	
 	// Attributs
@@ -7,8 +9,28 @@ public class Personne {
 	private String nom;
 	private String prenom;
 	private int age;
+	private Login login;
+	private Collection<Compte> comptes;
+	private Collection<Club> clubs;
 	
-	
+	public Login getLogin() {
+		return login;
+	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+	public Collection<Compte> getComptes() {
+		return comptes;
+	}
+	public void setComptes(Collection<Compte> comptes) {
+		this.comptes = comptes;
+	}
+	public Collection<Club> getClubs() {
+		return clubs;
+	}
+	public void setClubs(Collection<Club> clubs) {
+		this.clubs = clubs;
+	}
 	// Constructeurs	
 	public Personne() {
 		super();

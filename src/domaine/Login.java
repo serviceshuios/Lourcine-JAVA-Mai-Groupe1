@@ -6,7 +6,7 @@ public class Login {
 	private int idLogin;
 	private String pseudo;
 	private String mdp;
-	
+	private Personne personne;
 	
 	// Constructeurs
 	public Login() {
@@ -37,6 +37,14 @@ public class Login {
 	}
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+	
+	
+	public Personne getPersonne() {
+		return personne;
+	}
+	public void setPersonne(Personne personne) {
+		this.personne = personne;
 	}
 	// toString
 	@Override

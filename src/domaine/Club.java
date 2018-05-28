@@ -1,9 +1,12 @@
 package domaine;
 
+import java.util.Collection;
+
 public class Club {
 	
 	private int idClub;
 	private String nomClub;
+	private Collection<Personne> personnes;
 	
 	// Constructeurs
 	public Club() {
@@ -31,6 +34,14 @@ public class Club {
 		this.nomClub = nomClub;
 	}
 	
+	public Collection<Personne> getPersonnes() {
+		return personnes;
+	}
+
+	public void setPersonnes(Collection<Personne> personnes) {
+		this.personnes = personnes;
+	}
+
 	// toString
 	@Override
 	public String toString() {

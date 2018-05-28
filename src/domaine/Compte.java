@@ -3,8 +3,8 @@ package domaine;
 public class Compte {
 
 	private int idCompte;
-
 	private double solde;
+	private Personne proprietaire;
 	
 	public Compte() {
 		super();
@@ -30,6 +30,16 @@ public class Compte {
 
 	public void setSolde(double solde) {
 		this.solde = solde;
+	}
+	
+	
+
+	public Personne getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Personne proprietaire) {
+		this.proprietaire = proprietaire;
 	}
 
 	@Override
