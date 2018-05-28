@@ -13,6 +13,8 @@ public interface Iservice {
 	public void updatePersonne(Personne p);
 	public void deletePersonne(Personne p);
 	public void listePersonne(Personne p);
+	public void affilierClub(Personne p, Club c);
+	public void attribuerCompte(Personne p,Compte c);
 	
 	//COMPTE
 	
@@ -21,6 +23,9 @@ public interface Iservice {
 	public void updateCompte(Compte c);
 	public void deleteCompte(Compte c);
 	public void listeCompte(Compte c);
+	public void crediterCompte(Compte c, double mt);
+	public void debiterCompte(Compte c, double mt);
+	public void ajouterTitulaire(Compte c, Personne p);
 	
 	//CLUB
 	
@@ -29,6 +34,16 @@ public interface Iservice {
 	public void updateClub(Club c);
 	public void deleteClub(Club c);
 	public void listeClub(Club c);
+	public void ajouterPersonneClub(Personne p, Club c);
+	
+	// LOGIN
+	
+	public void createLogin(Login l);
+	public void readLogin(Login l);
+	public void updateLogin(Login l);
+	public void deleteLogin(Login l);
+	public void listeLogin(Login l);
+	
 
 	
 
