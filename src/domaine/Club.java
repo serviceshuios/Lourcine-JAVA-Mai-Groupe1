@@ -6,6 +6,7 @@ public class Club {
 	
 	private int idClub;
 	private String nomClub;
+	// Plusieurs personnes peuvent appartenir au Club
 	private Collection<Personne> personnes;
 	
 	// Constructeurs

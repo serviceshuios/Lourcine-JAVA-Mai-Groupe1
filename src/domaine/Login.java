@@ -6,6 +6,7 @@ public class Login {
 	private int idLogin;
 	private String pseudo;
 	private String mdp;
+	// Le compte est attribué à une personne
 	private Personne personne;
 	
 	// Constructeurs

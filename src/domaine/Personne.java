@@ -10,6 +10,7 @@ public class Personne {
 	private String prenom;
 	private int age;
 	private Login login;
+	// Une personne peut détenir plusieurs compte(s)/club(s)
 	private Collection<Compte> comptes;
 	private Collection<Club> clubs;
 	
