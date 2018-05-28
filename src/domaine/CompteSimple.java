@@ -13,6 +13,11 @@ public class CompteSimple extends Compte {
 		this.decouvert = decouvert;
 	}
 	
+	public CompteSimple(double decouvert) {
+		super();
+		this.decouvert = decouvert;
+	}
+
 	//GETTER AND SETTER
 
 	public double getDecouvert() {

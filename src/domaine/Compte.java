@@ -17,6 +17,12 @@ public class Compte {
 		this.solde = solde;
 	}
 
+	
+	public Compte(double solde) {
+		super();
+		this.solde = solde;
+	}
+
 	public int getIdCompte() {
 		return idCompte;
 	}
