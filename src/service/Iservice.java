@@ -2,6 +2,7 @@ package service;
 
 import domaine.Club;
 import domaine.Compte;
+import domaine.Login;
 import domaine.Personne;
 
 public interface Iservice {
