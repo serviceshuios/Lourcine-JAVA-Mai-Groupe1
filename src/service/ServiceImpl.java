@@ -171,7 +171,8 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void ajouterPersonneClub(Personne p, Club c) {
 		// TODO Auto-generated method stub
-		
+		p.getClubs().add(c);
+		c.getPersonnes().add(p);
 	}
 
 	@Override
