@@ -1,5 +1,7 @@
 package service;
 
+import java.util.Map;
+
 import domaine.Club;
 import domaine.Compte;
 import domaine.Login;
@@ -9,11 +11,11 @@ public interface Iservice {
 	
 	//PERSONNE
 	
-	public void createPersonne(Personne p);
+	public Map<Integer,Personne> createPersonne(Personne p);
 	public void readPersonne(Personne p);
 	public void updatePersonne(Personne p);
 	public void deletePersonne(Personne p);
-	public void listePersonne(Personne p);
+	public void listePersonne(Map<Integer,Personne> personnes);
 	public void affilierClub(Personne p, Club c);
 	public void attribuerCompte(Personne p,Compte c);
 	

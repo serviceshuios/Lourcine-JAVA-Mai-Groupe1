@@ -5,7 +5,7 @@ import java.util.Collection;
 public class Personne {
 	
 	// Attributs
-	private int idPerrsonne;
+	private int idPersonne;
 	private String nom;
 	private String prenom;
 	private int age;
@@ -37,23 +37,24 @@ public class Personne {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Personne(int idPerrsonne, String nom, String prenom, int age) {
+	public Personne(int idPersonne, String nom, String prenom, int age) {
 		super();
-		this.idPerrsonne = idPerrsonne;
+		this.idPersonne = idPersonne;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
 	}
 	
 	// Getters & Setters
-	public int getIdPerrsonne() {
-		return idPerrsonne;
-	}
-	public void setIdPerrsonne(int idPerrsonne) {
-		this.idPerrsonne = idPerrsonne;
-	}
+
 	public String getNom() {
 		return nom;
+	}
+	public int getIdPersonne() {
+		return idPersonne;
+	}
+	public void setIdPersonne(int idPersonne) {
+		this.idPersonne = idPersonne;
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -74,7 +75,7 @@ public class Personne {
 	// toString
 	@Override
 	public String toString() {
-		return "Personne [idPerrsonne=" + idPerrsonne + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+		return "Personne [idPerrsonne=" + idPersonne + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
 	}
 	
 	
