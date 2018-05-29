@@ -1,5 +1,6 @@
 package domaine;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Personne {
@@ -11,8 +12,8 @@ public class Personne {
 	private int age;
 	private Login login;
 	// Une personne peut détenir plusieurs compte(s)/club(s)
-	private Collection<Compte> comptes;
-	private Collection<Club> clubs;
+	private Collection<Compte> comptes = new ArrayList<Compte>();
+	private Collection<Club> clubs = new ArrayList<Club>();
 	
 	public Login getLogin() {
 		return login;
@@ -75,7 +76,7 @@ public class Personne {
 	// toString
 	@Override
 	public String toString() {
-		return "Personne [idPerrsonne=" + idPersonne + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+		return "Personne [idPersonne=" + idPersonne + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
 	}
 	
 	

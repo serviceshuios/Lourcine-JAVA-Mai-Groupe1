@@ -24,7 +24,6 @@ public class Lanceur {
 			Personne p2 = new Personne(2,"ZEC2","UNION2",22);
 			//Personne p3 = new Personne(3,"ZEC3","UNION3",23);
 			resultats=service.createPersonne(p);
-			resultats=service.createPersonne(p2);
 			//resultats=service.createPersonne(p3);
 		System.out.println("AFFICHAGE MAP APRES AJOUT");
 			service.listePersonne(resultats);
@@ -42,6 +41,14 @@ public class Lanceur {
 			resultatsC=service.createCompte(c3);
 		System.out.println("AFFICHAGE MAP APRES AJOUT");
 			service.listeCompte(resultatsC);	
+			
+			//ASSOCIER UNE COMPTE A UNE PERSONNE
+			service.ajouterTitulaire(c, p2);
+			service.ajouterTitulaire(c2, p2);
+			//ajouter la personne à la liste des Comptes
+			resultats=service.createPersonne(p2);
+			System.out.println("AFFICHAGE MAP APRES AJOUT PERSONNE AYANT UN COMPTE");
+			service.listePersonne(resultats);
 	}
 
 }

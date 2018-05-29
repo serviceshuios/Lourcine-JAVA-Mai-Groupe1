@@ -1,5 +1,6 @@
 package domaine;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Club {
@@ -7,7 +8,7 @@ public class Club {
 	private int idClub;
 	private String nomClub;
 	// Plusieurs personnes peuvent appartenir au Club
-	private Collection<Personne> personnes;
+	private Collection<Personne> personnes = new ArrayList<Personne>();
 	
 	// Constructeurs
 	public Club() {

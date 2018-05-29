@@ -12,8 +12,7 @@ public class ServiceImpl implements Iservice{
 
 	//DECLARER ET INITIALISER LA LISTE DES PERSONNES
 	private Map<Integer,Personne> personnes = new Hashtable<Integer,Personne>();
-	
-	private Map<Integer,Compte> comptes = new Hashtable<Integer,Compte>();
+    private Map<Integer,Compte> comptes = new Hashtable<Integer,Compte>();
 	
 	
 	public Map<Integer, Personne> getPersonnes() {
@@ -63,19 +62,28 @@ public class ServiceImpl implements Iservice{
 		// TODO Auto-generated method stub
 		for (Map.Entry<Integer, Personne> entry : personnes.entrySet()) {
 			 System.out.println(entry);
+			 if(entry.getValue().getComptes()!=null)
+			 {
+				 for (Compte compte : entry.getValue().getComptes()) {
+					System.out.println(compte);
+				}
+			 }
 		 }
 	}
 
 	@Override
 	public void affilierClub(Personne p, Club c) {
 		// TODO Auto-generated method stub
-		
+		p.getClubs().add(c);
+		c.getPersonnes().add(p);
 	}
 
 	@Override
 	public void attribuerCompte(Personne p, Compte c) {
 		// TODO Auto-generated method stub
-		
+		p.getComptes().add(c);
+		//opération inverse pour être synchronysé car pas encore de bdd
+		c.setProprietaire(p);
 	}
 
 	@Override
@@ -124,9 +132,10 @@ public class ServiceImpl implements Iservice{
 
 	@Override
 	public void ajouterTitulaire(Compte c, Personne p) {
-		// TODO Auto-generated method stub
-		
-		
+		       // TODO Auto-generated method stub
+				p.getComptes().add(c);
+				//opération inverse pour être synchronysé car pas encore de bdd
+				c.setProprietaire(p);
 	}
 
 	@Override
