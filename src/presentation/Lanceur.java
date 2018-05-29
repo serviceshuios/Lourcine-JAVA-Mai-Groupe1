@@ -7,6 +7,7 @@ import domaine.Compte;
 import domaine.CompteEpargne;
 import domaine.ComptePayant;
 import domaine.CompteSimple;
+import domaine.Login;
 import domaine.Personne;
 import service.Iservice;
 import service.ServiceImpl;
@@ -50,6 +51,20 @@ public class Lanceur {
 			System.out.println("AFFICHAGE MAP APRES AJOUT PERSONNE AYANT UN COMPTE");
 			service.listePersonne(resultats);
 			service.listeCompte(resultatsC);
+			
+			
+			Map<Integer,Login> resultatsL = new Hashtable<Integer,Login>();
+			// Création + affichage login
+			Login l = new Login(1, "lolo", "pepe");
+			Login l1 = new Login(2, "dede", "yaya");		
+			service.createLogin(l);
+			service.createLogin(l1);
+			//ajouter la personne à la liste des Comptes
+			resultatsL=service.createLogin(l);
+			resultatsL=service.createLogin(l1);
+			System.out.println("AFFICHAGE MAP APRES AJOUT login");
+			service.listeLogin(resultatsL);
+		
 	}
 
 }

@@ -32,7 +32,7 @@ public interface Iservice {
 	
 	//CLUB
 	
-	public void createClub(Club c);
+	public Map<Integer, Club> createClub(Club c);
 	public void readClub(Club c);
 	public void updateClub(Club c);
 	public void deleteClub(Club c);
@@ -41,11 +41,11 @@ public interface Iservice {
 	
 	// LOGIN
 	
-	public void createLogin(Login l);
+	public Map<Integer, Login> createLogin(Login l);
 	public void readLogin(Login l);
 	public void updateLogin(Login l);
 	public void deleteLogin(Login l);
-	public void listeLogin(Login l);
+	public void listeLogin(Map<Integer, Login> logins);
 	
 
 	

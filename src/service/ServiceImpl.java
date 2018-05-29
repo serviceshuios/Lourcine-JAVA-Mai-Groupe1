@@ -13,10 +13,20 @@ public class ServiceImpl implements Iservice{
 	//DECLARER ET INITIALISER LA LISTE DES PERSONNES
 	private Map<Integer,Personne> personnes = new Hashtable<Integer,Personne>();
     private Map<Integer,Compte> comptes = new Hashtable<Integer,Compte>();
+	private Map<Integer,Login> logins = new Hashtable<Integer,Login>();
+	private  Map<Integer, Club> clubs = new Hashtable<Integer,Club>();
 	
 	
 	public Map<Integer, Personne> getPersonnes() {
 		return personnes;
+	}
+
+	public Map<Integer, Login> getLogins() {
+		return logins;
+	}
+
+	public void setLogins(Map<Integer, Login> logins) {
+		this.logins = logins;
 	}
 
 	public void setPersonnes(Map<Integer, Personne> personnes) {
@@ -143,7 +153,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void createClub(Club c) {
+	public Map<Integer, Club> createClub(Club c) {
+		clubs.put(c.getIdClub(), c);
+		return clubs;
 		// TODO Auto-generated method stub
 		
 	}
@@ -169,7 +181,9 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void listeClub(Club c) {
 		// TODO Auto-generated method stub
-		
+		for(Map.Entry<Integer, Club> entry : clubs.entrySet()) {
+			System.out.println(entry);
+		}
 	}
 
 	@Override
@@ -180,10 +194,11 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void createLogin(Login l) {
+	public Map<Integer, Login> createLogin(Login l) {
 		// TODO Auto-generated method stub
-		
-	}
+		logins.put(l.getIdLogin(), l);
+		return logins;
+	}	
 
 	@Override
 	public void readLogin(Login l) {
@@ -204,9 +219,11 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void listeLogin(Login l) {
-		// TODO Auto-generated method stub
-		
+	public void listeLogin(Map<Integer, Login> logins) {
+		for(Map.Entry<Integer, Login> entry : logins.entrySet()) {
+		System.out.println(entry);
+			//TODO conditionnement pour affichage ssi non null
+		}
 	}
 
 }
