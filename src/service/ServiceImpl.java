@@ -114,6 +114,10 @@ public class ServiceImpl implements Iservice{
 	public void listeCompte(Map<Integer, Compte> comptes) {
 		for (Map.Entry<Integer, Compte> entry : comptes.entrySet()) {
 			 System.out.println(entry);
+			 if(entry.getValue().getProprietaire()!=null)
+			 {
+				 System.out.println("proriétaire="+entry.getValue().getProprietaire());
+			 }
 		 }
 		
 	}
