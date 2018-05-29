@@ -3,6 +3,8 @@ package presentation;
 import java.util.Hashtable;
 import java.util.Map;
 
+import domaine.Compte;
+import domaine.CompteEpargne;
 import domaine.Personne;
 import service.Iservice;
 import service.ServiceImpl;
@@ -21,7 +23,19 @@ public class Lanceur {
 			resultats=service.createPersonne(p);
 			resultats=service.createPersonne(p2);
 		System.out.println("AFFICHAGE MAP APRES AJOUT");
-			service.listePersonne(resultats);	
+			service.listePersonne(resultats);
+			
+			
+		Map<Integer,Compte> resultatsC = new Hashtable<Integer,Compte>();		
+		System.out.println("AFFICHAGE MAP AVANT AJOUT");
+			service.listeCompte(resultatsC);	
+		System.out.println("AJOUT D'UN COMPTE");
+			Compte c = new CompteEpargne(1, 5000.00, 0.04);
+			Compte c2 = new CompteEpargne(2,8000.00,0.05);
+			resultatsC=service.createCompte(c);
+			resultatsC=service.createCompte(c2);
+		System.out.println("AFFICHAGE MAP APRES AJOUT");
+			service.listeCompte(resultatsC);	
 	}
 
 }

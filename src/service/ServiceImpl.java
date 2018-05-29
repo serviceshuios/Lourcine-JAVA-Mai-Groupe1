@@ -13,6 +13,8 @@ public class ServiceImpl implements Iservice{
 	//DECLARER ET INITIALISER LA LISTE DES PERSONNES
 	private Map<Integer,Personne> personnes = new Hashtable<Integer,Personne>();
 	
+	private Map<Integer,Compte> comptes = new Hashtable<Integer,Compte>();
+	
 	
 	public Map<Integer, Personne> getPersonnes() {
 		return personnes;
@@ -20,6 +22,15 @@ public class ServiceImpl implements Iservice{
 
 	public void setPersonnes(Map<Integer, Personne> personnes) {
 		this.personnes = personnes;
+	}
+	
+
+	public Map<Integer, Compte> getComptes() {
+		return comptes;
+	}
+
+	public void setComptes(Map<Integer, Compte> comptes) {
+		this.comptes = comptes;
 	}
 
 	@Override
@@ -68,9 +79,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void createCompte(Compte c) {
-		// TODO Auto-generated method stub
-		
+	public Map<Integer, Compte> createCompte(Compte c) {
+		comptes.put(c.getIdCompte(), c);
+		return comptes;
 	}
 
 	@Override
@@ -92,8 +103,10 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void listeCompte(Compte c) {
-		// TODO Auto-generated method stub
+	public void listeCompte(Map<Integer, Compte> comptes) {
+		for (Map.Entry<Integer, Compte> entry : comptes.entrySet()) {
+			 System.out.println(entry);
+		 }
 		
 	}
 
@@ -112,6 +125,7 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void ajouterTitulaire(Compte c, Personne p) {
 		// TODO Auto-generated method stub
+		
 		
 	}
 

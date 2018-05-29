@@ -21,11 +21,11 @@ public interface Iservice {
 	
 	//COMPTE
 	
-	public void createCompte(Compte c);
+	public Map<Integer, Compte> createCompte(Compte c);
 	public void readCompte(Compte c);
 	public void updateCompte(Compte c);
 	public void deleteCompte(Compte c);
-	public void listeCompte(Compte c);
+	public void listeCompte(Map<Integer, Compte> comptes);
 	public void crediterCompte(Compte c, double mt);
 	public void debiterCompte(Compte c, double mt);
 	public void ajouterTitulaire(Compte c, Personne p);
