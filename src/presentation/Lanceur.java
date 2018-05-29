@@ -5,6 +5,8 @@ import java.util.Map;
 
 import domaine.Compte;
 import domaine.CompteEpargne;
+import domaine.ComptePayant;
+import domaine.CompteSimple;
 import domaine.Personne;
 import service.Iservice;
 import service.ServiceImpl;
@@ -20,8 +22,10 @@ public class Lanceur {
 		System.out.println("AJOUT D'UNE PERSONNE");
 			Personne p = new Personne(1,"ZEC","UNION",20);
 			Personne p2 = new Personne(2,"ZEC2","UNION2",22);
+			//Personne p3 = new Personne(3,"ZEC3","UNION3",23);
 			resultats=service.createPersonne(p);
 			resultats=service.createPersonne(p2);
+			//resultats=service.createPersonne(p3);
 		System.out.println("AFFICHAGE MAP APRES AJOUT");
 			service.listePersonne(resultats);
 			
@@ -31,9 +35,11 @@ public class Lanceur {
 			service.listeCompte(resultatsC);	
 		System.out.println("AJOUT D'UN COMPTE");
 			Compte c = new CompteEpargne(1, 5000.00, 0.04);
-			Compte c2 = new CompteEpargne(2,8000.00,0.05);
+			Compte c2 = new CompteSimple(2,8000.00, 1000.00);
+			Compte c3 = new ComptePayant(3,12000.00, 0.02);
 			resultatsC=service.createCompte(c);
 			resultatsC=service.createCompte(c2);
+			resultatsC=service.createCompte(c3);
 		System.out.println("AFFICHAGE MAP APRES AJOUT");
 			service.listeCompte(resultatsC);	
 	}

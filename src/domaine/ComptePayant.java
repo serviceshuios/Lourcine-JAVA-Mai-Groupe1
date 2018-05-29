@@ -22,6 +22,11 @@ public class ComptePayant extends Compte {
 	public void setTaux(double taux) {
 		this.taux = taux;
 	}
+
+	@Override
+	public String toString() {
+		return "ComptePayant [ idCompte = "+ super.getIdCompte() + " ; soldeCompte = " + super.getSolde() + " ; tauxComission=" + taux*100 + "%]";
+	}
 	
 
 }

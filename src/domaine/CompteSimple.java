@@ -27,6 +27,11 @@ public class CompteSimple extends Compte {
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
 	}
+
+	@Override
+	public String toString() {
+		return "CompteSimple [ idCompte = "+ super.getIdCompte() + " ; soldeCompte = " + super.getSolde() +" ; decouvert = " + decouvert + "]";
+	}
 	
 	
 

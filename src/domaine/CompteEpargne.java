@@ -9,6 +9,8 @@ package domaine;
 
 public class CompteEpargne extends Compte {
 
+
+
 	private double pourcentage;
 	
 	//CONSTRUCTOR
@@ -32,7 +34,10 @@ public class CompteEpargne extends Compte {
 		this.pourcentage = pourcentage;
 	}
 
-	
+		@Override
+	public String toString() {
+		return "CompteEpargne [ idCompte = "+ super.getIdCompte() + " ; soldeCompte = " + super.getSolde() +" ; pourcentage = " + pourcentage*100 + "%]";
+	}
 	
 	
 }
