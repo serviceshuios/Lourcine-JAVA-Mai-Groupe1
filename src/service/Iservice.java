@@ -36,7 +36,7 @@ public interface Iservice {
 	public void readClub(Club c);
 	public void updateClub(Club c);
 	public void deleteClub(Club c);
-	public void listeClub(Club c);
+	public void listeClub(Map<Integer, Club> clubs);
 	public void ajouterPersonneClub(Personne p, Club c);
 	
 	// LOGIN

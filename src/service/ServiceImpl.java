@@ -16,17 +16,9 @@ public class ServiceImpl implements Iservice{
 	private Map<Integer,Login> logins = new Hashtable<Integer,Login>();
 	private  Map<Integer, Club> clubs = new Hashtable<Integer,Club>();
 	
-	
+	//GETTER AND SETTER
 	public Map<Integer, Personne> getPersonnes() {
 		return personnes;
-	}
-
-	public Map<Integer, Login> getLogins() {
-		return logins;
-	}
-
-	public void setLogins(Map<Integer, Login> logins) {
-		this.logins = logins;
 	}
 
 	public void setPersonnes(Map<Integer, Personne> personnes) {
@@ -42,6 +34,23 @@ public class ServiceImpl implements Iservice{
 		this.comptes = comptes;
 	}
 
+	public Map<Integer, Login> getLogins() {
+		return logins;
+	}
+
+	public void setLogins(Map<Integer, Login> logins) {
+		this.logins = logins;
+	}
+	
+	public Map<Integer, Club> getClubs() {
+		return clubs;
+	}
+
+	public void setClubs(Map<Integer, Club> clubs) {
+		this.clubs = clubs;
+	}
+
+	//PERSONNE
 	@Override
 	public Map<Integer,Personne> createPersonne(Personne p) {
 		// TODO Auto-generated method stub
@@ -95,7 +104,9 @@ public class ServiceImpl implements Iservice{
 		//opération inverse pour être synchronysé car pas encore de bdd
 		c.setProprietaire(p);
 	}
-
+	
+	
+	//COMPTE
 	@Override
 	public Map<Integer, Compte> createCompte(Compte c) {
 		comptes.put(c.getIdCompte(), c);
@@ -151,7 +162,9 @@ public class ServiceImpl implements Iservice{
 				//opération inverse pour être synchronysé car pas encore de bdd
 				c.setProprietaire(p);
 	}
-
+	
+	
+	//CLUB
 	@Override
 	public Map<Integer, Club> createClub(Club c) {
 		clubs.put(c.getIdClub(), c);
@@ -179,10 +192,15 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void listeClub(Club c) {
-		// TODO Auto-generated method stub
+	public void listeClub(Map<Integer, Club> clubs) {
 		for(Map.Entry<Integer, Club> entry : clubs.entrySet()) {
 			System.out.println(entry);
+			if(entry.getValue().getPersonnes()!=null)
+			 {
+				 for (Personne personne : entry.getValue().getPersonnes()) {
+					System.out.println(personne);
+				}
+			 }
 		}
 	}
 
@@ -192,7 +210,9 @@ public class ServiceImpl implements Iservice{
 		p.getClubs().add(c);
 		c.getPersonnes().add(p);
 	}
-
+	
+	
+	//LOGIN
 	@Override
 	public Map<Integer, Login> createLogin(Login l) {
 		// TODO Auto-generated method stub
