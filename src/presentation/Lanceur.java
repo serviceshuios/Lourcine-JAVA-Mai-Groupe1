@@ -49,6 +49,7 @@ public class Lanceur {
 			resultats=service.createPersonne(p2);
 			System.out.println("AFFICHAGE MAP APRES AJOUT PERSONNE AYANT UN COMPTE");
 			service.listePersonne(resultats);
+			service.listeCompte(resultatsC);
 	}
 
 }
