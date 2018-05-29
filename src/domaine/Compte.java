@@ -1,6 +1,6 @@
 package domaine;
 
-public class Compte {
+public abstract class Compte {
 
 	private int idCompte;
 	protected double solde;
